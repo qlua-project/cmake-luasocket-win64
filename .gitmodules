@@ -2,3 +2,6 @@
 	path = externals/lua
 	url = https://github.com/qlua-project/cmake-lua-win64
 	branch = v5.5
+[submodule "luasocket"]
+	path = src
+	url = https://github.com/lunarmodules/luasocket
