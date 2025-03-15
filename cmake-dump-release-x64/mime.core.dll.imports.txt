@@ -1,0 +1,81 @@
+Microsoft (R) COFF/PE Dumper Version 14.50.35723.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file ..\cmake-build-release-x64\mime\core.dll
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    lua54.dll
+             1800040A0 Import Address Table
+             180004F78 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          26 luaL_setfuncs
+                           5 luaL_buffinit
+                          21 luaL_prepbuffsize
+                          22 luaL_pushresult
+                           1 luaL_addlstring
+                           2 luaL_addstring
+                          81 lua_tolstring
+                           9 luaL_checkinteger
+                          20 luaL_optnumber
+                           B luaL_checknumber
+                          1F luaL_optlstring
+                          68 lua_rawset
+                          37 lua_createtable
+                          5F lua_pushstring
+                          5C lua_pushlstring
+                          5E lua_pushnumber
+                          5D lua_pushnil
+                          78 lua_settop
+
+    VCRUNTIME140.dll
+             180004038 Import Address Table
+             180004F10 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          3C memcpy
+                          25 __std_type_info_destroy_list
+                           8 __C_specific_handler
+
+    api-ms-win-crt-runtime-l1-1-0.dll
+             180004058 Import Address Table
+             180004F30 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          16 _cexit
+                          22 _execute_onexit_table
+                          34 _initialize_onexit_table
+                          33 _initialize_narrow_environment
+                          36 _initterm
+                          37 _initterm_e
+                          3F _seh_filter_dll
+                          18 _configure_narrow_argv
+
+    KERNEL32.dll
+             180004000 Import Address Table
+             180004ED8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         246 GetCurrentThreadId
+                         242 GetCurrentProcessId
+                         39A InitializeSListHead
+                         142 DisableThreadLibraryCalls
+                         31A GetSystemTimeAsFileTime
+                         481 QueryPerformanceCounter
+
+  Summary
+
+        1000 .data
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        3000 .text
