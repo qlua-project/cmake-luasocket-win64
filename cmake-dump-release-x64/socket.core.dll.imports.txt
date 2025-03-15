@@ -1,0 +1,192 @@
+Microsoft (R) COFF/PE Dumper Version 14.43.34808.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file ..\cmake-build-release-x64\socket\core.dll
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    lua54.dll
+             18000A240 Import Address Table
+             18000C4E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          58 lua_pushcclosure
+                          59 lua_pushfstring
+                          85 lua_touserdata
+                          81 lua_tolstring
+                          47 lua_gettable
+                          7D lua_toboolean
+                          87 lua_typename
+                          3C lua_getfield
+                          4D lua_isstring
+                          22 luaL_pushresult
+                           1 luaL_addlstring
+                          21 luaL_prepbuffsize
+                           5 luaL_buffinit
+                           A luaL_checklstring
+                          5D lua_pushnil
+                          48 lua_gettop
+                          64 lua_rawget
+                          45 lua_getmetatable
+                          76 lua_setmetatable
+                          1B luaL_newmetatable
+                          28 luaL_testudata
+                          5A lua_pushinteger
+                          70 lua_setfield
+                          11 luaL_error
+                          77 lua_settable
+                           C luaL_checkoption
+                          6D lua_rotate
+                          63 lua_rawequal
+                          65 lua_rawgeti
+                          69 lua_rawseti
+                          31 lua_callk
+                          56 lua_pcallk
+                           E luaL_checktype
+                          57 lua_pushboolean
+                          54 lua_newuserdatauv
+                          5C lua_pushlstring
+                          86 lua_type
+                          82 lua_tonumberx
+                          4C lua_isnumber
+                          36 lua_copy
+                          61 lua_pushvalue
+                          78 lua_settop
+                          20 luaL_optnumber
+                           B luaL_checknumber
+                          1F luaL_optlstring
+                           4 luaL_argerror
+                          5E lua_pushnumber
+                          26 luaL_setfuncs
+                           9 luaL_checkinteger
+                          39 lua_error
+                          68 lua_rawset
+                          37 lua_createtable
+                          5F lua_pushstring
+
+    WS2_32.dll
+             18000A0B8 Import Address Table
+             18000C360 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal   111
+                             Ordinal   116
+                             Ordinal   115
+                             Ordinal    52
+                             Ordinal    51
+                             Ordinal    23
+                             Ordinal    22
+                             Ordinal    20
+                             Ordinal    19
+                             Ordinal    18
+                             Ordinal    17
+                             Ordinal    16
+                             Ordinal    13
+                             Ordinal    10
+                             Ordinal     4
+                             Ordinal     3
+                             Ordinal     2
+                             Ordinal     1
+                             Ordinal   151
+                          AA getnameinfo
+                          A5 freeaddrinfo
+                          A6 getaddrinfo
+                             Ordinal    57
+                             Ordinal     6
+                             Ordinal     5
+                          B7 inet_pton
+                             Ordinal    21
+                             Ordinal     7
+                             Ordinal     8
+                             Ordinal    12
+
+    KERNEL32.dll
+             18000A000 Import Address Table
+             18000C2A8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         5CE UnhandledExceptionFilter
+                         38E IsDebuggerPresent
+                         378 InitializeSListHead
+                         125 DisableThreadLibraryCalls
+                         226 GetCurrentThreadId
+                         222 GetCurrentProcessId
+                         45B QueryPerformanceCounter
+                         395 IsProcessorFeaturePresent
+                         5AC TerminateProcess
+                         221 GetCurrentProcess
+                         58D SetUnhandledExceptionFilter
+                         59D Sleep
+                         4EE RtlVirtualUnwind
+                         4E7 RtlLookupFunctionEntry
+                         4DF RtlCaptureContext
+                         2F8 GetSystemTimeAsFileTime
+                         1B0 FormatMessageA
+
+    VCRUNTIME140.dll
+             18000A090 Import Address Table
+             18000C338 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           8 __C_specific_handler
+                          3E memset
+                          25 __std_type_info_destroy_list
+                          3C memcpy
+
+    api-ms-win-crt-stdio-l1-1-0.dll
+             18000A228 Import Address Table
+             18000C4D0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           D __stdio_common_vsprintf
+                          10 __stdio_common_vsscanf
+
+    api-ms-win-crt-runtime-l1-1-0.dll
+             18000A1D8 Import Address Table
+             18000C480 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          22 _execute_onexit_table
+                          34 _initialize_onexit_table
+                          33 _initialize_narrow_environment
+                          3F _seh_filter_dll
+                          37 _initterm_e
+                          36 _initterm
+                          16 _cexit
+                          21 _errno
+                          18 _configure_narrow_argv
+
+    api-ms-win-crt-convert-l1-1-0.dll
+             18000A1B0 Import Address Table
+             18000C458 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          61 strtol
+
+    api-ms-win-crt-heap-l1-1-0.dll
+             18000A1C0 Import Address Table
+             18000C468 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          19 malloc
+                          18 free
+
+  Summary
+
+        2000 .data
+        1000 .pdata
+        3000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        9000 .text
