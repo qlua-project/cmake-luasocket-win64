@@ -38,13 +38,26 @@ set ( MIME_CORE src/mime.c src/compat.c )  # src/compat.c
 list( TRANSFORM SOCKET_CORE PREPEND "${LUASOCKET_DIR}/" )
 list( TRANSFORM MIME_CORE PREPEND "${LUASOCKET_DIR}/" )
 
+# https://cmake.org/cmake/help/latest/command/install.html
+# ARCHIVE - Target artifacts of this kind include: Static libraries
+# LIBRARY - Shared libraries, except DLLs
+# RUNTIME - Executables, DLLs
+
 add_library( socketcoredll MODULE ${SOCKET_CORE} )
-set_target_properties ( socketcoredll PROPERTIES OUTPUT_NAME core )
 target_link_libraries( socketcoredll ${LUA_LIBRARY} ws2_32.lib )
+set_target_properties ( socketcoredll PROPERTIES OUTPUT_NAME core
+        # ARCHIVE_OUTPUT_DIRECTORY socket
+        # RUNTIME_OUTPUT_DIRECTORY socket
+        LIBRARY_OUTPUT_DIRECTORY socket
+)
 
 add_library( mimedll MODULE ${MIME_CORE} )
-set_target_properties ( mimedll PROPERTIES OUTPUT_NAME core )
 target_link_libraries( mimedll ${LUA_LIBRARY} )
+set_target_properties ( mimedll PROPERTIES OUTPUT_NAME core
+        # ARCHIVE_OUTPUT_DIRECTORY mime
+        # RUNTIME_OUTPUT_DIRECTORY mime
+        LIBRARY_OUTPUT_DIRECTORY mime
+)
 
 install(TARGETS socketcoredll LIBRARY DESTINATION "bin/socket")
 install(TARGETS mimedll LIBRARY DESTINATION "bin/mime" )
