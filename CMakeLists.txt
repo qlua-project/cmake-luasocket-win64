@@ -1,15 +1,15 @@
 cmake_minimum_required( VERSION 3.30 )
 project( luasocket C )
 
-add_compile_options( /W4 )  # -Wall
-
 #set( CMAKE_VERBOSE_MAKEFILE on )
 #set( ALLOW_DUPLICATE_CUSTOM_TARGETS TRUE )
-set ( LUASOCKET_DIR src CACHE PATH "Where to search LuaSocket sources." )
 
+add_compile_options( /W4 )  # -Wall
 message ( ${CMAKE_C_FLAGS_RELEASE} )
 
-set ( ENV{LUA_DIR} "externals/lua" )
+set ( LUASOCKET_DIR src CACHE PATH "Where to search LuaSocket sources." )
+
+set ( ENV{LUA_DIR} "${PROJECT_SOURCE_DIR}/externals/lua" )
 find_package ( Lua REQUIRED )
 message ( STATUS "Lua Version ${LUA_VERSION_STRING}" )
 message ( STATUS "Lua Includes ${LUA_INCLUDE_DIR}" )
@@ -44,11 +44,11 @@ list( TRANSFORM MIME_CORE PREPEND "${LUASOCKET_DIR}/" )
 # RUNTIME - Executables, DLLs
 
 add_library( socketcoredll MODULE ${SOCKET_CORE} )
-target_link_libraries( socketcoredll ${LUA_LIBRARY} ws2_32.lib )
+target_link_libraries( socketcoredll ${LUA_LIBRARY} ws2_32 )
 set_target_properties ( socketcoredll PROPERTIES OUTPUT_NAME core
         # ARCHIVE_OUTPUT_DIRECTORY socket
         # RUNTIME_OUTPUT_DIRECTORY socket
-        LIBRARY_OUTPUT_DIRECTORY socket
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/socket"
 )
 
 add_library( mimedll MODULE ${MIME_CORE} )
@@ -56,18 +56,15 @@ target_link_libraries( mimedll ${LUA_LIBRARY} )
 set_target_properties ( mimedll PROPERTIES OUTPUT_NAME core
         # ARCHIVE_OUTPUT_DIRECTORY mime
         # RUNTIME_OUTPUT_DIRECTORY mime
-        LIBRARY_OUTPUT_DIRECTORY mime
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/mime"
 )
 
-install(TARGETS socketcoredll LIBRARY DESTINATION "bin/socket")
-install(TARGETS mimedll LIBRARY DESTINATION "bin/mime" )
-install ( FILES ${LUASOCKET_DIR}/src/http.lua DESTINATION "bin/socket" )
-install ( FILES ${LUASOCKET_DIR}/src/url.lua DESTINATION "bin/socket" )
-install ( FILES ${LUASOCKET_DIR}/src/tp.lua DESTINATION "bin/socket" )
-install ( FILES ${LUASOCKET_DIR}/src/ftp.lua DESTINATION "bin/socket" )
-install ( FILES ${LUASOCKET_DIR}/src/headers.lua DESTINATION "bin/socket" )
-install ( FILES ${LUASOCKET_DIR}/src/smtp.lua DESTINATION "bin/socket" )
-install ( FILES ${LUASOCKET_DIR}/src/ltn12.lua DESTINATION "bin" )
-install ( FILES ${LUASOCKET_DIR}/src/socket.lua DESTINATION "bin" )
-install ( FILES ${LUASOCKET_DIR}/src/mbox.lua DESTINATION "bin" )
-install ( FILES ${LUASOCKET_DIR}/src/mime.lua DESTINATION "bin" )
+install ( TARGETS socketcoredll LIBRARY DESTINATION "bin/socket" )
+install ( TARGETS mimedll LIBRARY DESTINATION "bin/mime" )
+
+set ( SOCKET_FILES http.lua url.lua headers.lua ftp.lua smtp.lua tp.lua  )
+set ( BIN_FILES    socket.lua mime.lua mbox.lua ltn12.lua  )
+list ( TRANSFORM SOCKET_FILES PREPEND "${LUASOCKET_DIR}/src/" )
+list ( TRANSFORM BIN_FILES    PREPEND "${LUASOCKET_DIR}/src/" )
+install ( FILES ${SOCKET_FILES} DESTINATION "bin/socket" )
+install ( FILES ${BIN_FILES}    DESTINATION "bin" )

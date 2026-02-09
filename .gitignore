@@ -1,4 +1,5 @@
 cmake-build-release-x64
 cmake-build-debug-x64
+build
 lua_modules
 .luarocks
