@@ -1,6 +1,6 @@
 @echo off
 if /I NOT "%1" == "/ENV" setlocal
-call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+call "%~dp0.buildtools.bat"
 if /I "%1" == "/ENV" goto EOF
 
 set "ALLSTEPS="

@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+call "%~dp0.buildtools.bat"
 
 set "CMAKE_BINARY_DIR=cmake-build-release-x64"
 if /I NOT "%1"=="" set "CMAKE_BINARY_DIR=%1"
