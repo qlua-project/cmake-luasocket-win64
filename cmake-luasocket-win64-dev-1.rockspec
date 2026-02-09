@@ -2,7 +2,7 @@ package = "cmake-luasocket-win64"
 version = "dev-1"
 source = {
    url = "git+ssh://git@github.com/qlua-project/cmake-luasocket-win64.git",
-   tag = "v3.scm.20250301-5.4.1",
+   tag = "v3.scm.20251114-5.4.1",
 }
 supported_platforms = {
     "win32",
