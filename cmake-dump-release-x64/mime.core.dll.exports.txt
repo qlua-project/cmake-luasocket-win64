@@ -1,4 +1,4 @@
-Microsoft (R) COFF/PE Dumper Version 14.43.34808.0
+Microsoft (R) COFF/PE Dumper Version 14.50.35723.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 
@@ -17,7 +17,7 @@ File Type: DLL
 
     ordinal hint RVA      name
 
-          1    0 00002170 luaopen_mime_core
+          1    0 000024F0 luaopen_mime_core
 
   Summary
 
