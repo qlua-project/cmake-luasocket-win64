@@ -10,7 +10,7 @@ File Type: DLL
 
     lua54.dll
              180009208 Import Address Table
-             18000B450 Import Name Table
+             18000B600 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -70,7 +70,7 @@ File Type: DLL
 
     WS2_32.dll
              180009070 Import Address Table
-             18000B2B8 Import Name Table
+             18000B468 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -107,7 +107,7 @@ File Type: DLL
 
     KERNEL32.dll
              180009000 Import Address Table
-             18000B248 Import Name Table
+             18000B3F8 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -122,7 +122,7 @@ File Type: DLL
 
     VCRUNTIME140.dll
              180009048 Import Address Table
-             18000B290 Import Name Table
+             18000B440 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -133,7 +133,7 @@ File Type: DLL
 
     api-ms-win-crt-stdio-l1-1-0.dll
              1800091E0 Import Address Table
-             18000B428 Import Name Table
+             18000B5D8 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -142,7 +142,7 @@ File Type: DLL
 
     api-ms-win-crt-string-l1-1-0.dll
              1800091F8 Import Address Table
-             18000B440 Import Name Table
+             18000B5F0 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -150,7 +150,7 @@ File Type: DLL
 
     api-ms-win-crt-runtime-l1-1-0.dll
              180009190 Import Address Table
-             18000B3D8 Import Name Table
+             18000B588 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -166,7 +166,7 @@ File Type: DLL
 
     api-ms-win-crt-convert-l1-1-0.dll
              180009168 Import Address Table
-             18000B3B0 Import Name Table
+             18000B560 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 
@@ -174,7 +174,7 @@ File Type: DLL
 
     api-ms-win-crt-heap-l1-1-0.dll
              180009178 Import Address Table
-             18000B3C0 Import Name Table
+             18000B570 Import Name Table
                      0 time date stamp
                      0 Index of first forwarder reference
 

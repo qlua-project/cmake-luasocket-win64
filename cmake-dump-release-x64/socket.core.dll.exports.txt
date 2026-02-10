@@ -12,12 +12,28 @@ File Type: DLL
     FFFFFFFF time date stamp
         0.00 version
            1 ordinal base
-           1 number of functions
-           1 number of names
+          17 number of functions
+          17 number of names
 
     ordinal hint RVA      name
 
-          1    0 00001050 luaopen_socket_core
+          1    0 00001480 buffer_init
+          2    1 000014C0 buffer_isempty
+          3    2 000014D0 buffer_meth_getstats
+          4    3 00001570 buffer_meth_receive
+          5    4 00001A10 buffer_meth_send
+          6    5 00001C30 buffer_meth_setstats
+          7    6 00001D30 io_init
+          8    7 00001050 luaopen_socket_core
+          9    8 00006FB0 socket_destroy
+         10    9 000072B0 socket_open
+         11    A 000078D0 socket_setblocking
+         12    B 00007900 socket_setnonblocking
+         13    C 00007990 socket_strerror
+         14    D 00007A50 socket_waitfd
+         15    E 00001310 timeout_init
+         16    F 00001320 timeout_markstart
+         17   10 000013C0 timeout_meth_settimeout
 
   Summary
 

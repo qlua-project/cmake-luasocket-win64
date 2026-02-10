@@ -11,7 +11,7 @@ File Type: DLL
 FILE HEADER VALUES
             8664 machine (x64)
                6 number of sections
-        698B3E2A time date stamp Tue Feb 10 17:18:18 2026
+        698A9BDE time date stamp Tue Feb 10 05:45:50 2026
                0 file pointer to symbol table
                0 number of symbols
               F0 size of optional header
@@ -24,9 +24,9 @@ OPTIONAL HEADER VALUES
              20B magic # (PE32+)
            14.50 linker version
             7E00 size of code
-            4E00 size of initialized data
+            5000 size of initialized data
                0 size of uninitialized data
-            83D4 entry point (00000001800083D4)
+            8404 entry point (0000000180008404)
             1000 base of code
        180000000 image base (0000000180000000 to 000000018000FFFF)
             1000 section alignment
@@ -49,10 +49,10 @@ OPTIONAL HEADER VALUES
             1000 size of heap commit
                0 loader flags
               10 number of directories
-            B130 [      50] RVA [size] of Export Directory
-            B180 [      C8] RVA [size] of Import Directory
+            B130 [     1FC] RVA [size] of Export Directory
+            B32C [      C8] RVA [size] of Import Directory
             E000 [     1E0] RVA [size] of Resource Directory
-            D000 [     A80] RVA [size] of Exception Directory
+            D000 [     A8C] RVA [size] of Exception Directory
                0 [       0] RVA [size] of Certificates Directory
             F000 [     23C] RVA [size] of Base Relocation Directory
             A460 [      1C] RVA [size] of Debug Directory
@@ -69,8 +69,8 @@ OPTIONAL HEADER VALUES
 
 SECTION HEADER #1
    .text name
-    7CA8 virtual size
-    1000 virtual address (0000000180001000 to 0000000180008CA7)
+    7CD8 virtual size
+    1000 virtual address (0000000180001000 to 0000000180008CD7)
     7E00 size of raw data
      400 file pointer to raw data (00000400 to 000081FF)
        0 file pointer to relocation table
@@ -83,10 +83,10 @@ SECTION HEADER #1
 
 SECTION HEADER #2
   .rdata name
-    2C86 virtual size
-    9000 virtual address (0000000180009000 to 000000018000BC85)
-    2E00 size of raw data
-    8200 file pointer to raw data (00008200 to 0000AFFF)
+    2E36 virtual size
+    9000 virtual address (0000000180009000 to 000000018000BE35)
+    3000 size of raw data
+    8200 file pointer to raw data (00008200 to 0000B1FF)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
@@ -99,14 +99,14 @@ SECTION HEADER #2
 
         Time Type        Size      RVA  Pointer
     -------- ------- -------- -------- --------
-    698B3E2A coffgrp      258 0000A4E0     96E0
+    698A9BDE coffgrp      258 0000A4E0     96E0
 
 SECTION HEADER #3
    .data name
      E00 virtual size
     C000 virtual address (000000018000C000 to 000000018000CDFF)
      A00 size of raw data
-    B000 file pointer to raw data (0000B000 to 0000B9FF)
+    B200 file pointer to raw data (0000B200 to 0000BBFF)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
@@ -117,10 +117,10 @@ C0000040 flags
 
 SECTION HEADER #4
   .pdata name
-     A80 virtual size
-    D000 virtual address (000000018000D000 to 000000018000DA7F)
+     A8C virtual size
+    D000 virtual address (000000018000D000 to 000000018000DA8B)
      C00 size of raw data
-    BA00 file pointer to raw data (0000BA00 to 0000C5FF)
+    BC00 file pointer to raw data (0000BC00 to 0000C7FF)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
@@ -134,7 +134,7 @@ SECTION HEADER #5
      1E0 virtual size
     E000 virtual address (000000018000E000 to 000000018000E1DF)
      200 size of raw data
-    C600 file pointer to raw data (0000C600 to 0000C7FF)
+    C800 file pointer to raw data (0000C800 to 0000C9FF)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
@@ -148,7 +148,7 @@ SECTION HEADER #6
      23C virtual size
     F000 virtual address (000000018000F000 to 000000018000F23B)
      400 size of raw data
-    C800 file pointer to raw data (0000C800 to 0000CBFF)
+    CA00 file pointer to raw data (0000CA00 to 0000CDFF)
        0 file pointer to relocation table
        0 file pointer to line numbers
        0 number of relocations
