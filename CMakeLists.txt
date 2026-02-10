@@ -28,6 +28,8 @@ add_compile_definitions(
         # LUASOCKET_INET_PTON
 )
 
+set ( SOCKET_INC src/socket.h src/timeout.h src/buffer.h src/io.h src/wsocket.h )
+
 set ( SOCKET_CORE src/luasocket.c src/timeout.c src/buffer.c src/io.c src/auxiliar.c
         src/options.c src/inet.c src/except.c src/select.c src/tcp.c src/udp.c src/compat.c
         src/wsocket.c )
@@ -35,6 +37,7 @@ set ( SOCKET_CORE src/luasocket.c src/timeout.c src/buffer.c src/io.c src/auxili
 set ( MIME_CORE src/mime.c src/compat.c )  # src/compat.c
 
 
+list( TRANSFORM SOCKET_INC PREPEND "${LUASOCKET_DIR}/" )
 list( TRANSFORM SOCKET_CORE PREPEND "${LUASOCKET_DIR}/" )
 list( TRANSFORM MIME_CORE PREPEND "${LUASOCKET_DIR}/" )
 
@@ -43,12 +46,20 @@ list( TRANSFORM MIME_CORE PREPEND "${LUASOCKET_DIR}/" )
 # LIBRARY - Shared libraries, except DLLs
 # RUNTIME - Executables, DLLs
 
-add_library( socketcoredll MODULE ${SOCKET_CORE} )
+# Target       File Type          Output Directory
+# STATIC  .lib (Static Library)   ARCHIVE
+# SHARED  .dll (The Binary)       RUNTIME
+# SHARED  .lib (Import Library)   ARCHIVE
+# MODULE  .dll (The Plugin)       LIBRARY (usually) or RUNTIME
+
+add_library( socketcoredll SHARED ${SOCKET_CORE} "luasocket.def" )
 target_link_libraries( socketcoredll ${LUA_LIBRARY} ws2_32 )
 set_target_properties ( socketcoredll PROPERTIES OUTPUT_NAME core
+        ARCHIVE_OUTPUT_NAME luasocket
         # ARCHIVE_OUTPUT_DIRECTORY socket
-        # RUNTIME_OUTPUT_DIRECTORY socket
-        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/socket"
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/socket"
+        # LIBRARY_OUTPUT_DIRECTORY socket
+        PUBLIC_HEADER "${SOCKET_INC}"
 )
 
 add_library( mimedll MODULE ${MIME_CORE} )
@@ -59,7 +70,10 @@ set_target_properties ( mimedll PROPERTIES OUTPUT_NAME core
         LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/mime"
 )
 
-install ( TARGETS socketcoredll LIBRARY DESTINATION "bin/socket" )
+install ( TARGETS socketcoredll RUNTIME DESTINATION "bin/socket"
+        ARCHIVE DESTINATION "lib"
+        PUBLIC_HEADER DESTINATION "include"
+)
 install ( TARGETS mimedll LIBRARY DESTINATION "bin/mime" )
 
 set ( SOCKET_FILES http.lua url.lua headers.lua ftp.lua smtp.lua tp.lua  )

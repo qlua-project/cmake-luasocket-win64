@@ -1,0 +1,20 @@
+; luasocket.def
+LIBRARY   core
+EXPORTS
+   luaopen_socket_core
+   timeout_init
+   timeout_markstart
+   timeout_meth_settimeout
+   io_init
+   buffer_init
+   buffer_meth_send
+   buffer_meth_receive
+   buffer_meth_getstats
+   buffer_meth_setstats
+   buffer_isempty
+   socket_open
+   socket_destroy
+   socket_setnonblocking
+   socket_setblocking
+   socket_waitfd
+   socket_strerror
